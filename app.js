@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const loginValidation = require('./src/routes/LoginValidation');
+const signUp = require('./src/routes/SignUp');
 const port = 5000;
 
 app.listen(port, () =>{
@@ -8,11 +9,4 @@ app.listen(port, () =>{
 });
 
 app.use('/loginValidation', loginValidation);
-
-app.get('/', function(req, res){
-    res.send('homepage');
-})
-
-app.get('/helloworldpage', function(req, res){
-    res.send('hello world');
-});
+app.use('/signUpNewUser', signUp)
