@@ -14,6 +14,7 @@ const userName = "";
 const password = "";
 
 router.post('/', (request, response) => {
+    console.log('/loginValidation');
     const credentials = {
         userName : request.body.userName,
         password : request.body.password

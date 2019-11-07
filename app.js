@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const loginValidation = require('./src/routes/LoginValidation');
 const signUp = require('./src/routes/SignUp');
+const logOutUser = require('./src/routes/LogoutUser');
 const port = 5000;
 
 app.listen(port, () =>{
@@ -10,3 +11,4 @@ app.listen(port, () =>{
 
 app.use('/loginValidation', loginValidation);
 app.use('/signUpNewUser', signUp)
+app.use('/logOutUser', logOutUser)

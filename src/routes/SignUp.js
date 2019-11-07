@@ -8,6 +8,7 @@ const emailId = "";
 const password = "";
 
 router.post('/', (request, response) => {
+    console.log('/signUpNewUser');
     const credentials = {
         name : request.body.name,
         emailId : request.body.email,
