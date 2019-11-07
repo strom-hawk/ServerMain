@@ -17,7 +17,7 @@ router.post('/', (request, response) => {
     //CONNECTIVITY TO DB
     //INSERT QUERY TO DB
     //IF INSERTION IS SUCCESSFUL RETURN 200
-    //ELSE RETURN OTHER ERROR CODE
+    //ELSE RETURN ANY ERROR CODE
 
     response.json({
         "txnStatus":"200",
