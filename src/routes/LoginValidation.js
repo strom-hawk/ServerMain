@@ -5,8 +5,8 @@ const log4js = require('log4js');
 
 router.use(bodyParser.json());
 log4js.configure({
-    appenders:{fileAppender:{type:'file', filename:'/logs/access_log.log'}},
-    categories:{default:{appenders:['fileAppender'], level:'info'}}
+    appenders:{everything:{type:'dateFile', filename:'./logs/access_log.log'}},
+    categories:{default:{appenders:['everything'], level:'debug'}}
 });
 
 const logger = log4js.getLogger();
