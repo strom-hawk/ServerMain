@@ -18,7 +18,7 @@ router.post('/', (request, response) => {
 
     response.json({
         "txnStatus":"200",
-        "txnMessage":"Sign Up Successful"
+        "txnMessage":"Logout Successful"
     });
 })
 

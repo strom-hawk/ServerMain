@@ -9,7 +9,7 @@ const log4js = require('log4js');
 
 router.use(bodyParser.json());
 log4js.configure({
-    appenders: { fileAppender: { type: 'file', filename: '/logs/access_log.log' } },
+    appenders: { fileAppender: { type: 'file', filename: './logs/access_log.log' } },
     categories: { default: { appenders: ['fileAppender'], level: 'info' } }
 });
 
@@ -173,8 +173,12 @@ function deg2rad(deg) {
     return deg * (Math.PI / 180)
 }
 
-function generateClientList(userLatitude, userLongitude) {
+function generateClientList(userLatitude, userLongitude, listType) {
     let i;
+    //EMPTY THE LIST IF HIT IS FOR THE FIRST TIME
+    if(listType == "initialList"){
+        generatedClientList=[];
+    }
     for (i = 0; i < clientList.length; i++) {
         let distance = calculateDistance(clientList[i].clientLatitude, clientList[i].clientLongitude,
             userLatitude, userLongitude);
@@ -193,7 +197,7 @@ router.post('/', (request, response) => {
         generatedClientList=[];
     }
 
-    generateClientList(request.body.userLatitude, request.body.userLongitude);
+    generateClientList(request.body.userLatitude, request.body.userLongitude, request.body.listType);
 
     const responseJson = {
         "txnStatus": txnStatusSuccess,
