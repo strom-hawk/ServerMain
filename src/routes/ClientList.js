@@ -199,7 +199,7 @@ router.post('/', (request, response) => {
 
     generateClientList(request.body.userLatitude, request.body.userLongitude, request.body.listType);
 
-    const responseJson = {
+    let responseJson = {
         "txnStatus": txnStatusSuccess,
         "txnMessage": txnMessageSuccess,
         "clientList": generatedClientList,
