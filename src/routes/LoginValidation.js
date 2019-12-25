@@ -60,7 +60,8 @@ router.post('/', (request, response) => {
     console.log(request.body);
 
     let credentials = {
-        emailOrMobile: request.body.emailOrMobile,
+        //emailOrMobile: request.body.emailOrMobile,
+        emailOrMobile: request.body.userName,
         password: request.body.password
     }
 
